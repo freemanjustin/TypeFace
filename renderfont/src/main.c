@@ -56,8 +56,8 @@ int main(int arg, char **argv)
 {
    stbtt_fontinfo font;
    int i,j,ascent,baseline,ch=0;
-   float scale, xpos=50;
-   char *text = "abcdefghijklmnopqrstuvwxyz";
+   float scale, xpos, ypos;
+   char *text = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
    unsigned char *outimage;
 
    int  characters;
@@ -85,14 +85,22 @@ int main(int arg, char **argv)
 
    scale = stbtt_ScaleForPixelHeight(&font, line_height);
    stbtt_GetFontVMetrics(&font, &ascent,0,0);
-   baseline = (int) (ascent*scale);
+   baseline = (int) (ascent*scale) + 150; // this is the yposition
 
-   for(characters = 0; characters < 26; characters++){
+   xpos = (width/2)-200;
+   for(characters = 0; characters < 62; characters++){
 
      printf("%c.png\n", text[characters]);
-     sprintf(fname, "%c.png", text[characters]);            // 4 channel image derived from 1 channel image
-     sprintf(fname_mono, "%c_mono.png", text[characters]);  // 1 channel image
-
+     // on osx A.png and a.png are the same filename name. FFS apple!
+     if(characters < 26){
+      sprintf(fname, "%c.png", text[characters]);            // 4 channel image derived from 1 channel image
+      sprintf(fname_mono, "%c_mono.png", text[characters]);  // 1 channel image
+     }
+     else{
+      sprintf(fname, "_%c.png", text[characters]);            // 4 channel image derived from 1 channel image
+      sprintf(fname_mono, "_%c_mono.png", text[characters]);  // 1 channel image
+     }
+    
       // initialize the image color
       for (j=0; j < height; ++j) {
           for (i=0; i < width; ++i){

@@ -6,9 +6,9 @@ letters = "abcdefghijklmnopqrstuvwxyz"
 chars = list(letters)
 
 # output directory top level name
-outdir = "helvetica"
+outdir = "helvetica_96"
 
-for j in range(0,256,16):
+for j in range(0,256,8):
     cmd = "mkdir -p ./%s/%03d" % (outdir,  j )
     #print cmd
     commands.getstatusoutput(cmd)
