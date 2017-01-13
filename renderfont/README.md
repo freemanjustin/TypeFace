@@ -36,5 +36,5 @@ which is a rather odd name.
 the output will appear in the same directory.
 
 # sample output
-![output sample](https://raw.github.com/freemanjustin/TypeFace/master/renderfont/bin/a_mono.png)
+![output sample](https://raw.github.com/freemanjustin/TypeFace/master/renderfont/bin/sample.png)
 freeman.justin@gmail.com
