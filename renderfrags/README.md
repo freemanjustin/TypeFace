@@ -25,5 +25,5 @@ The bin directory includes my python script for generating the fragments for the
 
 # contact
 - email: freeman.justin@gmail.com
-- instagram: __freej__
+- instagram: ```__freej__```
 
