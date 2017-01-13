@@ -35,4 +35,7 @@ which is a rather odd name.
 ```
 the output will appear in the same directory.
 
+# sample output
+![input sample](https://raw.github.com/freemanjustin/TypeFace/renderfont/master/bin/a_mono.png)
+
 freeman.justin@gmail.com
